@@ -21,9 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://16.16.127.209:9000/</sonar.host.url>
+		<sonar.host.url>http://13.48.131.75:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
-		<sonar.password>Bhupi@1202</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -98,12 +97,14 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<!--
 		    <dependency>
                       <groupId>com.mt</groupId>
                       <artifactId>mail</artifactId>
                       <version>1.0.0</version>
                       <classifier>javadoc</classifier>
                     </dependency>
+		-->
 		
 	</dependencies>
 	
@@ -112,13 +113,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>My testing release repo</name>
-	      <url>http://13.53.245.178:8081/repository/testing-release/</url>
+	      <url>http://16.16.124.31:8081/repository/amazon-dev-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>My testing release Repository </name>
-	      <url>http://13.53.245.178:8081/repository/testing-snapshot/</url>
+	      <url>http://16.16.124.31:8081/repository/amazon-dev-snapshot/</url>
 	    </snapshotRepository>
 	   
 	</distributionManagement>
@@ -141,6 +142,12 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.10.0.2594</version>
+            </plugin>
 
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
